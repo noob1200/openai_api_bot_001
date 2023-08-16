@@ -34,7 +34,7 @@ def communicate():
         model="gpt-3.5-turbo",
         messages=messages,
         temperature = 1.25,
-        max_tokens=1000        
+        # max_tokens=1000        
     )  
 
     bot_message = response["choices"][0]["message"]
