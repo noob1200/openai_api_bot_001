@@ -32,10 +32,10 @@ def communicate():
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
+        Let's think step by step,
         messages=messages,
         temperature = 1.25,
-        max_tokens=1000,
-        Let's think step by step
+        max_tokens=1000        
     )  
 
     bot_message = response["choices"][0]["message"]
