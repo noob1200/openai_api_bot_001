@@ -33,7 +33,8 @@ def communicate():
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,
-        temperature = 1.5
+        temperature = 1.5,
+        max_tokens=1000
     )  
 
     bot_message = response["choices"][0]["message"]
@@ -45,7 +46,7 @@ def communicate():
 # ユーザーインターフェイスの構築
 st.title(" 「レシピ」を考えるチャットボット")
 st.image("01_recipe.png")
-st.write("どんな食事を作りたいですか？")
+st.write("どんな食事を作りたいですか？(創作料理可")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
