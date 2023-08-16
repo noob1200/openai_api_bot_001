@@ -32,7 +32,6 @@ def communicate():
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        Let's think step by step,
         messages=messages,
         temperature = 1.25,
         max_tokens=1000        
@@ -52,7 +51,7 @@ st.write("どんな食事を作りたいですか？(創作料理可)")
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
 if st.session_state["messages"]:
-    messages = st.session_state["messages"]
+    messages = st.session_state["messages" + "Let's think step by step"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
         speaker = "🙂"
